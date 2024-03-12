@@ -12,7 +12,7 @@ jobs:
       
     - name: Check main.c
       run: |
-        if grep -q "24" main.c; then
+        if grep -q "Perimeter of the rectangle: 24" main.c; then
           echo "Passed"
           exit 0
         else
