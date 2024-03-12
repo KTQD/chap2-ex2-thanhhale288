@@ -1,0 +1,21 @@
+name: Check main.c
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Check main.c
+      run: |
+        if grep -q "National Economics University" main.c; then
+          echo "Passed"
+          exit 0
+        else
+          echo "Failed"
+          exit 1
+        fi
