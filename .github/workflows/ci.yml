@@ -26,5 +26,5 @@ jobs:
           echo "Failed"
           exit 1
         fi
-   - name: Display output.txt contents
+    - name: Display output.txt contents
       run: cat output.txt
