@@ -1,7 +1,10 @@
-# Chapter 1 - Exercise 1 
-Write a program that prints “National Economics University”
+# Chapter 1 - Exercise 2
+Write a program that prints the perimeter of a rectangle to take its height and width as input.
+
 
 ### Input
+5
+7
 
 ### Expected Output: 
-National Economics University
+24
