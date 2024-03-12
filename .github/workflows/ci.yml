@@ -1,4 +1,4 @@
-name: Check main.c
+name: Check main.c for correct perimeter output
 
 on: [push]
 
@@ -10,9 +10,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Check main.c
+    - name: Install build-essential
+      run: sudo apt-get update && sudo apt-get install build-essential -y
+
+    - name: Compile main.c
+      run: gcc main.c -o main
+
+    - name: Check output for 5 7 input
       run: |
-        if grep -q "Perimeter of the rectangle: 24" main.c; then
+        echo -e "5\n7" | ./main > output.txt
+        if grep -q "Perimeter of the rectangle: 24" output.txt; then
           echo "Passed"
           exit 0
         else
